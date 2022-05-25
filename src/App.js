@@ -1,7 +1,9 @@
 // import logo from './logo.svg';
 import './App.css'
+// import 'antd/dist/antd.lss'
 import { Route, Routes } from 'react-router-dom'
 import routerList from './router'
+import Layout from './components/layout/layout'
 
 function App() {
   return (
@@ -23,16 +25,17 @@ function App() {
     // </div>
     <div>
       <Routes>
-        {/* <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/login" element={<Login />}></Route> */}
-        {routerList.map((item) => (
-          <Route
-            path={item.path}
-            element={item.element}
-            key={item.path}
-          ></Route>
-        ))}
+        <Route path="/layout" element={<Layout />}>
+          {routerList.map((item) => {
+            return (
+              <Route
+                path={item.path}
+                element={item.element}
+                key={item.path}
+              ></Route>
+            )
+          })}
+        </Route>
       </Routes>
     </div>
   )
