@@ -3,7 +3,7 @@ import { Button } from 'antd'
 const Login = () => {
   const navigate = useNavigate()
   const onLogin = () => {
-    navigate('/home')
+    navigate('/main')
   }
   return (
     <div>

@@ -3,8 +3,8 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { Layout, Menu } from 'antd'
 import React, { useState } from 'react'
 import { useNavigate, Outlet, useLocation } from 'react-router-dom'
+import menuRouter from '../../router/menuRouter'
 
-import routerList from '../../router/index'
 const { Header, Sider, Content } = Layout
 
 const App = () => {
@@ -14,15 +14,13 @@ const App = () => {
   const selectMenu = ({ key }) => {
     navigate(key)
   }
-  const menus = routerList.map((item) => ({
+  const menus = menuRouter.map((item) => ({
     key: item.path,
     label: item.name,
     icon: item.icon,
   }))
 
-  const selectedKeys = [
-    location.pathname === '/layout' ? '' : location.pathname,
-  ]
+  const selectedKeys = [location.pathname === '/main' ? '' : location.pathname]
   return (
     <Layout style={{ height: '100vh' }}>
       <Sider trigger={null} collapsible collapsed={collapsed}>

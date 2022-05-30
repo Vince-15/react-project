@@ -3,7 +3,22 @@ import './App.css'
 // import 'antd/dist/antd.lss'
 import { Route, Routes } from 'react-router-dom'
 import routerList from './router'
-import Layout from './components/layout/layout'
+// import Layout from './components/layout/layout'
+const getMenuNodes = (menuList) => {
+  return menuList.map((item) => {
+    if (!item.children) {
+      return (
+        <Route path={item.path} element={item.element} key={item.path}></Route>
+      )
+    } else {
+      return (
+        <Route path={item.path} element={item.element} key={item.path}>
+          {getMenuNodes(item.children)}
+        </Route>
+      )
+    }
+  })
+}
 
 function App() {
   return (
@@ -24,19 +39,7 @@ function App() {
     //   </header>
     // </div>
     <div>
-      <Routes>
-        <Route path="/layout" element={<Layout />}>
-          {routerList.map((item) => {
-            return (
-              <Route
-                path={item.path}
-                element={item.element}
-                key={item.path}
-              ></Route>
-            )
-          })}
-        </Route>
-      </Routes>
+      <Routes>{getMenuNodes(routerList)}</Routes>
     </div>
   )
 }
