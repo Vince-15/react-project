@@ -40,13 +40,10 @@ const App = () => {
             padding: 0,
           }}
         >
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: 'trigger',
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
+          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            className: 'trigger',
+            onClick: () => setCollapsed(!collapsed),
+          })}
           <span>header</span>
         </Header>
 

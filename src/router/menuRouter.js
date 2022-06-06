@@ -1,5 +1,5 @@
+import React from 'react'
 import {
-  UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
   ApartmentOutlined,
@@ -7,7 +7,6 @@ import {
 } from '@ant-design/icons'
 import Home from '../view/home/home'
 import About from '../view/about/about'
-import Login from '../view/login/login'
 import Main from '../view/main/main'
 import User from '../view/user/user'
 const menuRouter = [
@@ -28,12 +27,6 @@ const menuRouter = [
     element: <About />,
     name: 'about',
     icon: <VideoCameraOutlined />,
-  },
-  {
-    path: '/main/login',
-    element: <Login />,
-    name: 'login',
-    icon: <UploadOutlined />,
   },
   {
     path: '/main/user',

@@ -1,3 +1,4 @@
+import React from 'react'
 import menuRouter from './menuRouter'
 import blankRouter from './blankRouter'
 import Layout from '../components/layout/layout'

@@ -1,15 +1,14 @@
 // import logo from './logo.svg';
 import './App.css'
 // import 'antd/dist/antd.lss'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import routerList from './router'
 // import Layout from './components/layout/layout'
-const getMenuNodes = (menuList) => {
-  return menuList.map((item) => {
+const getMenuNodes = (menuList) =>
+  menuList.map((item) => {
     if (!item.children) {
-      return (
-        <Route path={item.path} element={item.element} key={item.path}></Route>
-      )
+      return <Route path={item.path} element={item.element} key={item.path}></Route>
     } else {
       return (
         <Route path={item.path} element={item.element} key={item.path}>
@@ -18,7 +17,6 @@ const getMenuNodes = (menuList) => {
       )
     }
   })
-}
 
 function App() {
   return (
